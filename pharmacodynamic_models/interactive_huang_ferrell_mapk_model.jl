@@ -47,7 +47,7 @@ Huang_Ferrell_MAPK_model = @reaction_network begin
 	(a10, d10), MapkPP + Mapkpase <--> MapkPPMapkpase
 	k10, MapkPPMapkpase --> MapkP + Mapkpase
 end
-
+# Mapped using Huang and Ferrell 1996
 
 # ╔═╡ 99a5c3b6-94ec-4ef4-ab11-8166b20eb518
 tspan = (0, 300.0) # 300 seconds period
@@ -75,7 +75,7 @@ E1_conc = 10^log_E1
 
 # ╔═╡ d221478f-f7a4-4441-9ea5-b8b02d91e4ce
 u0 = [
-	:Mapkkk       => 0.0025,      # 2.5 nM -> 0.0025 uM
+	:Mapkkk       => 0.003,      # 3 nM -> 0.003 uM
 	:Mapkk        => 1.2,         # 1200 nM -> 1.2 uM
 	:Mapk         => 1.2,         # 1200 nM -> 1.2 uM
 	:E1           => E1_conc,     # Default concentration is 1e-5 uM
@@ -100,6 +100,7 @@ u0 = [
 	:MapkPP       => 0.0,
 	:MapkPPMapkpase => 0.0
 ]
+# Parameters chosen to fit the ranges listed in Huang and Ferrell 1996
 
 # ╔═╡ 5559bda3-126b-4339-bda6-f8a94ea55a65
 prob = ODEProblem(Huang_Ferrell_MAPK_model, u0, tspan, ps)
