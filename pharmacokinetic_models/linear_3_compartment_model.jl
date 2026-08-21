@@ -24,7 +24,7 @@ end
 u0 = [100, 0, 0] # Simulates an IV bolus, u0[1] = Central Compartment, u0[2] = Peripheral Tissue 1, u0[3] = Peripheral Tissue 2
 
 # ╔═╡ cf36dc92-38dd-4b07-ba43-ea5b02bf9bab
-tspan = (0,24) # 24 hour simulation
+tspan = (0,48) # 48 hour simulation
 
 # ╔═╡ fa67beca-9c4b-4b95-9608-f62dc96b1efb
 p = (k12 = 0.60, k21 = 0.30, k13 = 0.15, k31 = 0.02, ke = 0.25) # Rate constants, order of numbers denotes directionality of drug movement, ke is elimination from the central compartment
@@ -38,6 +38,7 @@ sol = solve(prob)
 # ╔═╡ 98c7cc39-9870-409c-aa36-1fce453754c9
 plot(sol,
 	idxs = [1,2,3],
+	
 	label = ["Central Compartment (C1)" "Shallow Tissue (C2)" "Deep Tissue (C3)"],
 	title = "Linear 3 Compartment Model",
 	xlabel = "Time (h)",
