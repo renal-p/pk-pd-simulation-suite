@@ -41,7 +41,7 @@ plot(sol,
 	label = ["Central Compartment (C1)" "Shallow Tissue (C2)" "Deep Tissue (C3)"],
 	title = "Linear 3 Compartment Model",
 	xlabel = "Time (h)",
-	ylabel = "Drug Mass (mcg)"
+	ylabel = "Drug Mass (mg)"
 	)
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
